@@ -1,9 +1,11 @@
 import React from "react";
+import ShowVideos from "../components/ShowVideos/ShowVideos";
 
 export default function Videos() {
   return (
     <div>
-      <p>vidoes</p>
+      <p>videos</p>
+      <ShowVideos keyword={''}/>
     </div>
   );
 }
