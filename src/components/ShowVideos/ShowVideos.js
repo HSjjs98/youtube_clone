@@ -1,11 +1,14 @@
 import {useQuery} from '@tanstack/react-query'
 import FakeYoutube from '../../api/FakeYoutube';
+import Youtube from '../../api/Youtube';
+import { useYoutubeApi } from '../../context/YoutubeApiContext';
+
 
 export default function ShowVideos({keyword}) {
+  const {youtube} = useYoutubeApi()
   const {isLoading, error, data: videos} = useQuery(['videos', keyword], 
   () => {
-    const youtube = new FakeYoutube()
-    return youtube.search(keyword)
+    youtube.search(keyword)
   }, {
     staleTime: 5000,
   })
@@ -15,7 +18,7 @@ export default function ShowVideos({keyword}) {
   if (error) return <p>{error}</p>;
   return (
     <div>
-      {videos.map(video => <div>{video.id}</div>)}
+      {videos.map(video => <div>{video.snippet.title}</div>)}
     </div>
   );
 }
