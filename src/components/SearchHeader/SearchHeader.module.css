@@ -1,11 +1,13 @@
 .container{
   display: flex;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #dad0d0;
   padding: 1rem;
+  width: 70%;
+  margin: 0 auto;
 }
 .form{
   margin: 0.5rem 0;
-  margin-left: 20vw;
+  margin-left: 10vw;
   width:40vw;
   display: flex;
 }
