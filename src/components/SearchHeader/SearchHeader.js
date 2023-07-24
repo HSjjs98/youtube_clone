@@ -11,13 +11,13 @@ export default function SearchHeader() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/videos/${search}`)
+    navigate(`/videos/search/${search}`)
     setSearch('')
   };
   
   return (
     <div className={styles.container}>
-      <button onClick={() => navigate('/')} className={styles.youtube}>
+      <button onClick={() => navigate('/videos')} className={styles.youtube}>
         <FaYoutube className={styles.logo}/>
         Youtube
       </button>

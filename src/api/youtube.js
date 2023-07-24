@@ -4,12 +4,32 @@ export default class Youtube {
   constructor() {
     this.httpClient = axios.create({
       baseURL: "https://www.googleapis.com/youtube/v3",
-      params: { key: "AIzaSyAUbuMoo-sX0Cl3ItRG5P3QTF2CL5yYhCU" },
+      params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
     });
   }
 
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
+  }
+
+  async channelImageUrl(id) {
+    return this.#getChannelImageUrl(id);
+  }
+
+  async relatedVideos(id){
+    return this.#getRelatedVideos(id)
+  }
+
+
+  async #getChannelImageUrl(id) {
+    return this.httpClient
+      .get("channels", {
+        params: {
+          part: "snippet",
+          id,
+        },
+      })
+      .then((res) => res.data.items[0].snippet.thumbnails.default.url);
   }
 
   async #searchByKeyword(keyword) {

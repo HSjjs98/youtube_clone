@@ -5,12 +5,12 @@ import VideoCard from '../VideoCard/VideoCard';
 import styles from './ShowVideos.module.css'
 
 export default function ShowVideos({keyword}) {
-  const {youtube} = useYoutubeApi()
+  // const {youtube} = useYoutubeApi()
   const {isLoading, error, data: videos} = useQuery(['videos', keyword], 
   () => {
-    return youtube.search(keyword)
-    // const fy = new FakeYoutube()
-    // return fy.search(keyword)
+    // return youtube.search(keyword)
+    const fy = new FakeYoutube()
+    return fy.search(keyword)
   }, {
     staleTime: 5000,
   })

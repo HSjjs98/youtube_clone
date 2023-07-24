@@ -4,7 +4,7 @@ import ShowVideos from "../components/ShowVideos/ShowVideos";
 export default function Videos() {
   return (
     <div>
-      <ShowVideos keyword={'popular'}/>
+      <ShowVideos keyword={''}/>
     </div>
   );
 }

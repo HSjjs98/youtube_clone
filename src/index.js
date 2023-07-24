@@ -16,19 +16,19 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Videos />
+        element: <Videos /> //popular videos
       },
       {
         path: "videos",
-        element: <Videos />,
+        element: <Videos />, ////popular videos
       },
       {
-        path: "videos/:keyword",
-        element: <KeywordVideo />,
+        path: "videos/search/:keyword",
+        element: <KeywordVideo />, //search videos
       },
       {
         path: "videos/watch/:videoId",
-        element: <VideoDetail />,
+        element: <VideoDetail />, //watch videos
       },
     ],
   },
