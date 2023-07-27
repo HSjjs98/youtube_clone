@@ -16,10 +16,24 @@ export default class Youtube {
     return this.#getChannelImageUrl(id);
   }
 
-  async relatedVideos(id){
-    return this.#getRelatedVideos(id)
+  async relatedVideos(id) {
+    return this.#getRelatedVideos(id);
   }
 
+  async #getRelatedVideos(id) {
+    return this.httpClient
+      .get("videos", {
+        params: {
+          part: "snippet",
+          maxResults: 15,
+          type: "video",
+          relatedToVideoId: id,
+        },
+      })
+      .then((res) =>
+        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      );
+  }
 
   async #getChannelImageUrl(id) {
     return this.httpClient
@@ -42,8 +56,9 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) => res.data.items)
-      .then((items) => items.map((item) => ({ ...item, id: item.id.videoId })));
+      .then((res) =>
+        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      );
   }
   async #mostPopular() {
     return this.httpClient

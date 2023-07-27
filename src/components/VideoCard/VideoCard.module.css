@@ -1,7 +1,9 @@
 .container{
   height: 180px;
-  font-size: 11px;
-  /* border-radius: 10%; */
+  font-size: 12px;
+  width: 200px;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
 }
 
 .container img{
@@ -11,7 +13,7 @@
 }
 .title{
   font-weight: 450;
-  margin: 0;
+  margin: 0 0 -5px 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* 두 줄 이상을 표시하지 않도록 설정 */
@@ -28,5 +30,5 @@
 .date{
   font-weight: 350;
   opacity: 0.8;
-  font-size: 9px;
+  font-size: 10px;
 }

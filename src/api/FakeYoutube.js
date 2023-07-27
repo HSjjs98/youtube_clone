@@ -10,11 +10,20 @@ export default class FakeYoutube {
     return this.#getChannelImageUrl(id)
   }
 
+  async relatedVideos(id){
+    return this.#getRelatedVideos(id)
+  }
+
+  async #getRelatedVideos(id) {
+    return axios
+      .get('/videos/related.json')
+      .then((res) => res.data.items.map((item) => ({ ...item, id: item.id.videoId })))
+  }
+  
   async #searchByKeyword(keyword) {
     return axios
       .get('/videos/search.json')
-      .then((res) => res.data.items)
-      .then((items) => items.map((item) => ({ ...item, id: item.id.videoId })));
+      .then((res) => res.data.items.map((item) => ({ ...item, id: item.id.videoId })))
   }
   async #mostPopular() {
     return axios.get(`/videos/popular.json`).then((res) => res.data.items);

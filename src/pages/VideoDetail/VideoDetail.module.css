@@ -1,0 +1,30 @@
+.section{
+  display: flex;
+  flex-direction: row;
+}
+.article{
+  width: 75%;
+  margin-left: 3rem;
+}
+.area {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 비율 */
+}
+.video {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+}
+.description{
+  white-space: pre-wrap;
+}
+@media (max-width: 1024px){
+  .section{
+    flex-direction: column;
+  }
+  .article{
+    width: 90%;
+    margin: 0 auto;
+  }
+}

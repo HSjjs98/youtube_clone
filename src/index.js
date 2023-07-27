@@ -5,7 +5,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Videos from "./pages/Videos";
 import PageNotFound from "./pages/PageNotFound";
-import VideoDetail from "./pages/VideoDetail";
+import VideoDetail from "./pages/VideoDetail/VideoDetail";
 import KeywordVideo from "./pages/KeywordVideo";
 
 const router = createBrowserRouter([

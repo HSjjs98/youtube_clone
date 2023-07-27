@@ -1,15 +1,15 @@
 .container{
   display: flex;
-  border-bottom: 1px solid #dad0d0;
   padding: 1rem;
   width: 70%;
-  margin: 0 auto;
+  margin: 1rem 0 3rem ;
 }
 .form{
   margin: 0.5rem 0;
-  margin-left: 10vw;
+  margin-left: 15vw;
   width:40vw;
   display: flex;
+  min-width: 12rem;
 }
 .input{
   height: 1.7rem;
