@@ -22,7 +22,7 @@ export default class Youtube {
 
   async #getRelatedVideos(id) {
     return this.httpClient
-      .get("videos", {
+      .get("search", {
         params: {
           part: "snippet",
           maxResults: 15,

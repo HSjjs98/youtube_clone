@@ -20,7 +20,7 @@ export default function ChannelInfo({ id, title }) {
   // );
   return (
     <div style={{ fontWeight: 550 }}>
-      {url && <img src={url} alt="channel" />}
+      {url && <img style={{borderRadius: "50%", width:'1rem', marginRight: '0.5rem'}} src={url} alt="channel" />}
       {title}
     </div>
   );

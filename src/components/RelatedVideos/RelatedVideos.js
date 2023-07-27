@@ -13,7 +13,7 @@ export default function RelatedVideos({ id }) {
   } = useQuery(["related", id], () => youtube.relatedVideos(id), {
     staleTime: 1000 * 60 * 5,
   });
-  // console.log(videos)
+  console.log(videos)
   // const {
   //   isLoading,
   //   error,
