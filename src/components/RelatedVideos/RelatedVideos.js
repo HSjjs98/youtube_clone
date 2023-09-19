@@ -27,15 +27,17 @@ export default function RelatedVideos({ id }) {
   //   { staleTime: 1000 * 60 * 5 }
   // );
 
-  if (isLoading) return <p>Loading...</p>;
-
-  if (error) return <p>{error}</p>;
-
   return (
-    <ul>
-      {videos.map((video) => (
-        <VideoCard video={video} />
-      ))}
-    </ul>
+    <>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Related videos api deprecated since 23/8/7 😖</p>}
+      {videos && (
+        <ul>
+          {videos.map((video) => (
+            <VideoCard key={video.id} video={video} type='list' />
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
